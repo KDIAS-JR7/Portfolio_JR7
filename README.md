@@ -4,7 +4,7 @@ A responsive personal portfolio to showcase my skills and projects in networking
 
 Live Demo
 You can view the live version of this portfolio here:
-https://your-username.github.io/your-repository-name/
+https://KDIAS-JR7.github.io/Portfolio_JR7/
 
 Features
 Responsive Design: Optimized for all devices, from mobile phones to desktops.

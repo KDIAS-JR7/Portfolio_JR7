@@ -43,10 +43,9 @@ Open the file:
 Open the index.html file in your favorite web browser.
 
 Links
-LinkedIn: https://linkedin.com/in/your-profile
+LinkedIn: https://www.linkedin.com/in/kaveesh-g-aa3946115/
 
-GitHub: https://github.com/your-profile
+GitHub: https://github.com/KDIAS-JR7
 
 Credly: https://www.credly.com/users/kaveesh-goonasekara
 
-Note: Remember to replace the placeholder links with your actual profile links.

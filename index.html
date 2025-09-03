@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaveesh's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-[#1e1e2e] text-[#cdd6f4];
+        }
+        .section {
+            @apply py-10 px-4 md:px-8 lg:px-16;
+        }
+        .project-card, .certification-card {
+            @apply bg-[#24273a] rounded-2xl p-6 transition-transform transform hover:scale-105 hover:shadow-lg duration-300;
+        }
+        .skill-button {
+            @apply flex items-center justify-center p-6 rounded-full shadow-lg cursor-pointer transition-all duration-300 transform;
+        }
+        .description-enter-active,
+        .description-leave-active {
+            transition: opacity 0.5s ease, max-height 0.5s ease-in-out;
+            overflow: hidden;
+        }
+        .description-enter-from,
+        .description-leave-to {
+            opacity: 0;
+            max-height: 0;
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-[#1e1e2e] text-[#cdd6f4] flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-[#1e1e2e] bg-opacity-90 backdrop-blur-md border-b border-[#45475a] pb-2">
+        <nav class="flex justify-between items-center py-4 px-6 md:px-12">
+            <div class="flex items-center">
+                <a href="#home" class="text-2xl font-bold text-[#cdd6f4] hover:text-[#b4befe] transition duration-300">Home</a>
+            </div>
+            <div class="space-x-4 hidden md:block">
+                <a href="#about" class="text-[#cdd6f4] hover:text-[#b4befe] transition duration-300">About</a>
+                <a href="#skills" class="text-[#cdd6f4] hover:text-[#b4befe] transition duration-300">Skills</a>
+                <a href="#certifications" class="text-[#cdd6f4] hover:text-[#b4befe] transition duration-300">Certifications</a>
+                <a href="#projects" class="text-[#cdd6f4] hover:text-[#b4befe] transition duration-300">Projects</a>
+                <a href="#contact" class="text-[#cdd6f4] hover:text-[#b4befe] transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-[#cdd6f4] hover:text-[#b4befe] focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#24273a] bg-opacity-90 backdrop-blur-md">
+            <a href="#home" class="block py-2 px-6 text-[#cdd6f4] hover:bg-[#45475a] transition duration-300">Home</a>
+            <a href="#about" class="block py-2 px-6 text-[#cdd6f4] hover:bg-[#45475a] transition duration-300">About</a>
+            <a href="#skills" class="block py-2 px-6 text-[#cdd6f4] hover:bg-[#45475a] transition duration-300">Skills</a>
+            <a href="#certifications" class="block py-2 px-6 text-[#cdd6f4] hover:bg-[#45475a] transition duration-300">Certifications</a>
+            <a href="#projects" class="block py-2 px-6 text-[#cdd6f4] hover:bg-[#45475a] transition duration-300">Projects</a>
+            <a href="#contact" class="block py-2 px-6 text-[#cdd6f4] hover:bg-[#45475a] transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto flex-1">
+        <section id="home" class="section text-center flex flex-col justify-center items-center animate-fade-in-up">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#cdd6f4] mb-4">
+                Hi, I'm <span class="text-[#b4befe]">Kaveesh</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-[#cdd6f4] max-w-2xl mx-auto mb-8">
+                A second-year Information Systems undergraduate at Sabaragamuwa University of
+                Sri Lanka with a passion for networking and automation and a Linux enthusiast.
+                I hold a CCNA certification and am dedicated to building efficient, scalable, and secure networks.
+            </p>
+            <a id="view-projects-btn" href="#projects" class="bg-[#24273a] text-[#cdd6f4] px-8 py-3 rounded-full font-semibold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg">
+                View My Projects
+            </a>
+        </section>
+
+        <section id="about" class="section rounded-3xl mb-8 hidden">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#b4befe]">About Me</h2>
+                <div class="text-lg text-[#cdd6f4] text-center max-w-2xl mx-auto">
+                    <p class="mb-4">
+                        As a student and CCNA-certified professional, I have a strong foundation in the core principles of networking.
+                        My expertise lies in network fundamentals, routing protocols like OSPF, and the implementation of
+                        switching technologies, all gained through rigorous study and hands-on practice in Cisco Packet Tracer.
+                    </p>
+                    <p>
+                        I believe that the future of networking lies in automation. I am actively building my skills in Python
+                        to write scripts that automate common network tasks, ensuring consistency and efficiency. This portfolio
+                        showcases my practical application of CCNA concepts.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section hidden">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-[#b4befe]">Skills</h2>
+            <div id="skills-grid" class="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="ccna"><span class="material-symbols-outlined">network_check</span>CCNA</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="cisco-ios"><span class="material-symbols-outlined">router</span>Cisco IOS</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="ospf"><span class="material-symbols-outlined">share</span>OSPF</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="vlans-stp"><span class="material-symbols-outlined">hub</span>VLANs/STP</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="packet-tracer"><span class="material-symbols-outlined">cable</span>Packet Tracer</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="ip-subnetting"><span class="material-symbols-outlined">pin</span>IP Subnetting</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="network-automation"><span class="material-symbols-outlined">robot</span>Network Automation</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="python"><span class="material-symbols-outlined">code</span>Python</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="bash"><span class="material-symbols-outlined">terminal</span>Bash</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="linux-cli"><span class="material-symbols-outlined">desktop_mac</span>Linux CLI</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="html"><span class="material-symbols-outlined">html</span>HTML</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="css"><span class="material-symbols-outlined">palette</span>CSS</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="bootstrap"><span class="material-symbols-outlined">layers</span>Bootstrap</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="mysql"><span class="material-symbols-outlined">database</span>MySQL</button>
+                <button class="bg-[#24273a] text-[#cdd6f4] rounded-full font-bold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg w-40 h-20 flex flex-col items-center justify-center space-y-1" data-skill="java"><span class="material-symbols-outlined">coffee</span>Java</button>
+            </div>
+            <div id="skill-description" class="hidden transition-all duration-500 overflow-hidden mt-8 max-w-4xl mx-auto text-center bg-[#24273a] rounded-3xl p-6">
+                </div>
+        </section>
+
+        <section id="certifications" class="section hidden">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-[#b4befe]">Certifications & Badges</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="certification-card text-center">
+                    <h3 class="text-xl font-semibold mb-2 text-[#b4befe]">
+                        CCNA: Enterprise Networking, Security, and Automation
+                    </h3>
+                    <p class="text-[#a6adc8] text-sm">Issued: Feb 25, 2025</p>
+                </div>
+                <div class="certification-card text-center">
+                    <h3 class="text-xl font-semibold mb-2 text-[#b4befe]">
+                        CCNA: Switching, Routing, and Wireless Essentials
+                    </h3>
+                    <p class="text-[#a6adc8] text-sm">Issued: Jan 19, 2025</p>
+                </div>
+                <div class="certification-card text-center">
+                    <h3 class="text-xl font-semibold mb-2 text-[#b4befe]">
+                        CCNA: Introduction to Networks
+                    </h3>
+                    <p class="text-[#a6adc8] text-sm">Issued: Sep 4, 2024</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="https://www.credly.com/users/kaveesh-goonasekara" target="_blank" class="bg-[#24273a] text-[#cdd6f4] px-8 py-3 rounded-full font-semibold hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300 shadow-lg">
+                    View My Full Credly Profile
+                </a>
+            </div>
+        </section>
+
+        <section id="projects" class="section hidden">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-[#b4befe]">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                <div class="project-card">
+                    <h3 class="text-2xl font-semibold mb-2 text-[#b4befe]">OSPF Lab Topology</h3>
+                    <p class="text-[#cdd6f4] mb-4">
+                        A detailed Cisco Packet Tracer lab simulating a multi-area OSPF network with full documentation and device configurations.
+                    </p>
+                    <a href="https://github.com/KDIAS-JR7/ospf-ccna-lab" target="_blank" class="text-[#cdd6f4] hover:text-[#b4befe] font-semibold transition duration-300">
+                        View on GitHub
+                        <span class="ml-1 inline-block transform -rotate-45">&#8599;</span>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="text-2xl font-semibold mb-2 text-[#b4befe]">VLAN & Inter-VLAN Routing</h3>
+                    <p class="text-[#cdd6f4] mb-4">
+                        A Cisco Packet Tracer lab that demonstrates the configuration and verification of multiple VLANs and inter-VLAN routing on a Layer 3 switch.
+                    </p>
+                    <a href="https://github.com/KDIAS-JR7/vlan-lab" target="_blank" class="text-[#cdd6f4] hover:text-[#b4befe] font-semibold transition duration-300">
+                        View on GitHub
+                        <span class="ml-1 inline-block transform -rotate-45">&#8599;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section hidden">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#b4befe]">Contact</h2>
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:email@example.com" class="bg-[#24273a] text-[#cdd6f4] p-4 rounded-full hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="bg-[#24273a] text-[#cdd6f4] p-4 rounded-full hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/your-profile" target="_blank" class="bg-[#24273a] text-[#cdd6f4] p-4 rounded-full hover:bg-[#b4befe] hover:text-[#1e1e2e] transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.542-1.304-1.328-1.643-1.328-1.643-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.49-1.25.107-.745.412-1.236.752-1.516-2.665-.299-5.46-.381-5.46-5.455 0-1.208.43-2.19.112-2.97-.107-.257-.493-1.272.109-2.651 0 0 .984-.319 3.22-.123 1.056-.114 2.164-.114 3.218 0 2.235-.196 3.219.123 3.219.123.604 1.379.212 2.394.109 2.651.681.78.111 1.762.111 2.97 0 5.089-2.807 5.754-5.479 5.454.38.33.729.957.729 1.922 0 1.341-.012 2.417-.012 2.747 0 .321.208.693.8.576 4.793-1.55 8.232-6.04 8.232-11.383 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-6 text-[#a6adc8] border-t border-[#45475a] mt-8">
+        <p>&copy; 2025 Kaveesh's Portfolio. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

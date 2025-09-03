@@ -33,7 +33,7 @@ This is a static website, so no installation is required. To run a local copy, s
 
 Clone the repository:
 
-git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
+git clone https://github.com/KDIAS-JR7/Portfolio_JR7.git
 
 Navigate to the project directory:
 

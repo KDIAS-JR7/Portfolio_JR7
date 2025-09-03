@@ -1,4 +1,5 @@
-Personal Portfolio
+My Personal Portfolio
+
 A responsive personal portfolio to showcase my skills and projects in networking, automation, and web development. As a second-year Information Systems undergraduate and CCNA-certified professional, this site highlights my proficiency in network fundamentals, routing protocols, and a passion for automation with Python.
 
 Live Demo

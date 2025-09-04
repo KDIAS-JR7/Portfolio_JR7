@@ -2,9 +2,14 @@ const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const viewProjectsBtn = document.getElementById('view-projects-btn');
 const skillsGrid = document.getElementById('skills-grid');
-const skillDescriptionBox = document.getElementById('skill-description');
 const sections = document.querySelectorAll('main section');
-const navLinks = document.querySelectorAll('a[href^="#"]'); // This is the corrected line.
+const navLinks = document.querySelectorAll('a[href^="#"]');
+
+// New modal elements
+const skillModal = document.getElementById('skill-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+const modalCloseBtn = document.getElementById('modal-close-btn');
 
 const skillDescriptions = {
     'ccna': {
@@ -82,7 +87,6 @@ const showSectionAndScroll = (targetId) => {
     const targetSection = document.querySelector(targetId);
     if (targetSection) {
         targetSection.classList.remove('hidden');
-        // Trigger reflow to restart animation
         void targetSection.offsetWidth;
         targetSection.classList.add('animate-fade-in-up');
         window.scrollTo({
@@ -111,19 +115,37 @@ viewProjectsBtn.addEventListener('click', (e) => {
     showSectionAndScroll(e.target.getAttribute('href'));
 });
 
+// New logic for the skill pop-up
 skillsGrid.addEventListener('click', (e) => {
     const skillCard = e.target.closest('button');
     if (skillCard) {
         const skillName = skillCard.dataset.skill;
-        if (skillDescriptions[skillName]) {
-            const { title, description } = skillDescriptions[skillName];
-            skillDescriptionBox.innerHTML = `
-                <h3 class="text-2xl font-semibold mb-2 text-[#b4befe]">${title}</h3>
-                <p class="text-[#cdd6f4] text-lg">${description}</p>
-            `;
-            skillDescriptionBox.classList.remove('hidden');
-        } else {
-            skillDescriptionBox.classList.add('hidden');
+        const skill = skillDescriptions[skillName];
+        if (skill) {
+            modalTitle.textContent = skill.title;
+            modalDescription.textContent = skill.description;
+            skillModal.classList.remove('hidden', 'opacity-0');
+            skillModal.classList.add('is-visible');
         }
+    }
+});
+
+// Close modal when close button is clicked
+modalCloseBtn.addEventListener('click', () => {
+    skillModal.classList.remove('is-visible');
+    skillModal.classList.add('opacity-0');
+    setTimeout(() => {
+        skillModal.classList.add('hidden');
+    }, 300); // Wait for the transition to finish
+});
+
+// Close modal when clicking outside the content
+skillModal.addEventListener('click', (e) => {
+    if (e.target.id === 'skill-modal') {
+        skillModal.classList.remove('is-visible');
+        skillModal.classList.add('opacity-0');
+        setTimeout(() => {
+            skillModal.classList.add('hidden');
+        }, 300);
     }
 });

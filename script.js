@@ -4,7 +4,7 @@ const viewProjectsBtn = document.getElementById('view-projects-btn');
 const skillsGrid = document.getElementById('skills-grid');
 const skillDescriptionBox = document.getElementById('skill-description');
 const sections = document.querySelectorAll('main section');
-const navLinks = document.querySelectorAll('nav a');
+const navLinks = document.querySelectorAll('a[href^="#"]'); // This is the corrected line.
 
 const skillDescriptions = {
     'ccna': {

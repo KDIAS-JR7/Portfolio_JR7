@@ -34,6 +34,9 @@ An advanced Infrastructure-as-Code (IaC) automation repository containing 18 pro
 ### 🔀 [L3-InterVlanRouting-JR7](https://github.com/KDIAS-JR7/L3-InterVlanRouting-JR7)
 A Cisco Packet Tracer lab implementing Layer 3 Inter-VLAN routing. Configured core Multilayer Switches (SVI), access topologies, DHCP pooling, and access lists to handle secure, high-throughput traffic distribution across segmented broadcast domains.
 
+### 🛡️ [Sentry-Pod](https://github.com/SanujaMenath/Sentry-Pod/tree/dev/kaveesh)
+A containerized Network Management System automating network management through Intent-Based Networking, optimized for Cisco-centric environments. Leverages AI to translate natural language into accurate Cisco IOS commands. Major contributor to the dev/kaveesh branch, focusing on backend integration and system architecture.
+
 ---
 
 ## 🚀 Local Development Setup
